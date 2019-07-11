@@ -1,0 +1,24 @@
+import time
+start = time.time()
+def primefinder(number):
+    prime = [True for x in range(number + 1)]
+    y = 2
+    while (y * y <= number):
+        if (prime[y] == True):
+            for x in range(y * y, number + 1, y):
+                prime[x] = False
+        y += 1
+    for y in range(2,number):
+        if prime[y]:
+            factor = True
+            while factor == True:
+                if number % y != 0:
+                    factor = False
+                    break
+                print(y)
+                number /= y
+
+primefinder(1000000)
+
+end = time.time()
+print(end - start)
