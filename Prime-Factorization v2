@@ -17,8 +17,9 @@ def primefactorfinder(number):
                     break
                 print(y)
                 number /= y
+    if y + 1 == number:
+        print(y+1)
 
-primefactorfinder(463445)
-
+primefactorfinder(65634)
 end = time.time()
 print(end - start)
