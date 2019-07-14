@@ -28,7 +28,7 @@ int main() {
     for (long long x = 5; x <= number; x += 2 ){
         bool prime = true;
         long long y = 3;
-        while (y < sqrt(x)) {
+        while (y <= sqrt(x)) {
             if (x % y == 0){
                 prime = false;
                 break;}
