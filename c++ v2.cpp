@@ -3,16 +3,13 @@
 #include <cmath>
 #include<ctime>
 using namespace std;
-int y = 1;
 int count = 26;
 bool factor = true;
-long long number = 456745634545;
 std::vector<int> primelist = {};
 std::vector<int> primelist2 = {};
 int start_s=clock() ;
-int main()
-{
-    std::vector<int> primelist2 = {2, 3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101 };
+
+int primefactor(long long number) {std::vector<int> primelist2 = {2, 3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101 };
     for (int x = 0; x < count; x++){
         factor = true;
         int z = primelist2[x];
@@ -48,4 +45,12 @@ int main()
     }
     int stop_s=clock();
     cout<<(stop_s-start_s)/double(CLOCKS_PER_SEC);
+
 }
+
+int main()
+{
+    primefactor(9999991);
+    return 0;
+}
+
