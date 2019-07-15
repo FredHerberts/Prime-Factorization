@@ -27,10 +27,10 @@ int main()
         }
     }
     std::vector<int> primelist = { 3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101 };
-    for (long long y = 103; y <= number; y += 2) {
+    for (int y = 103; y <= number; y += 2) {
         bool prime = true;
-        for (long long x = 0; x < number; x++) {
-            long long z = primelist[x];
+        for (int x = 0; x < number; x++) {
+            int z = primelist[x];
             if (y % z == 0) { prime = false; break; };
             if (z > sqrt(y)) { break; };
         }
