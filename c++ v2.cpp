@@ -13,7 +13,7 @@ int start_s=clock() ;
 int main()
 {
     std::vector<int> primelist2 = {2, 3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101 };
-    for (long long x = 0; x < count; x++){
+    for (int x = 0; x < count; x++){
         factor = true;
         int z = primelist2[x];
         while (factor == true){
