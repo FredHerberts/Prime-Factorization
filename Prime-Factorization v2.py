@@ -3,7 +3,7 @@ import math
 
 start = time.time()
 primelist = [2]
-Number = 600851475143
+Number = 45754745667456
 factors = []
 
 if Number % 2 == 0:
@@ -19,6 +19,9 @@ def primefinder(number, Number):
     y = 3
     prime = [True] * (number + 1)
     for y in range(3, int(math.sqrt(number + 1)), 2):
+        if number > Number:
+                factors.append(int(Number))
+                return None
         if prime[y] == True:
             primelist.append(y)
             if Number % y == 0:
@@ -29,8 +32,7 @@ def primefinder(number, Number):
                         break
                     factors.append(y)
                     Number /= y
-                    if number > Number:
-                        factors.append(int(Number))
+                    if Number == 1:
                         return None
             for x in range(y ** 2, number + 1, y + y):
                 prime[x] = False
@@ -45,10 +47,9 @@ def primefinder(number, Number):
                         break
                     factors.append(x)
                     Number /= x
-                    if number > Number:
-                        factors.append(int(Number))
+                    if Number == 1:
                         return None
-    if Number > 1:
+    if Number != 1:
         factors.append(int(Number))
 
 primefinder(int(math.sqrt(Number) + 1), Number)
