@@ -17,7 +17,7 @@ def primefactoring(number):
             number = int(number/x)
         if x > number+ 1:
             break
-    for y in range(103, number + 1, 2):
+    for y in range(103, int(math.sqrt(number))+1, 2):
         prime = True
         for x in primelist2:
             if y % x == 0:
@@ -35,13 +35,11 @@ def primefactoring(number):
                 Factors.append(y)
                 number = number / y
                 if y > number + 1:
-                    break
-            if y > number + 1:
-                break
-        if y > number + 1:
-            break
+                    return None
+    if number != 1:
+        Factors.append(int(number))
 
-primefactoring(int(number))
+primefactoring(number)
 print(Factors)
 end = time.time()
 print(end - start)
