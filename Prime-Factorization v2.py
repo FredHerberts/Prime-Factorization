@@ -18,7 +18,7 @@ if Number % 2 == 0:
 def primefinder(number, Number):
     y = 3
     prime = [True] * (number + 1)
-    for y in range(3, int(math.sqrt(number + 1)), 2):
+    for y in range(3, int(math.sqrt(number)+1), 2):
         if number > Number:
                 factors.append(int(Number))
                 return None
