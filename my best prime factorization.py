@@ -25,6 +25,10 @@ def primefactoring(number):
                 break
             if x > math.sqrt(y):
                 break
+            if y > math.sqrt(number)+1:
+                if number != 1:
+                    Factors.append(int(number))
+                    return None
         if prime == True:
             primelist2.append(y)
             factor2 = True
@@ -34,8 +38,6 @@ def primefactoring(number):
                     break
                 Factors.append(y)
                 number = number / y
-                if y > number + 1:
-                    return None
     if number != 1:
         Factors.append(int(number))
 
